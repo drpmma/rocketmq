@@ -1148,6 +1148,14 @@ public class BrokerController {
         return popMessageProcessor;
     }
 
+    public AckMessageProcessor getAckMessageProcessor() {
+        return ackMessageProcessor;
+    }
+
+    public ChangeInvisibleTimeProcessor getChangeInvisibleTimeProcessor() {
+        return changeInvisibleTimeProcessor;
+    }
+
     protected void shutdownBasicService() {
 
         shutdown = true;
