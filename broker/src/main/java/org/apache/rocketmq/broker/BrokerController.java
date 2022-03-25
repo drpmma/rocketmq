@@ -2050,6 +2050,10 @@ public class BrokerController {
         return assignmentManager;
     }
 
+    public ClientManageProcessor getClientManageProcessor() {
+        return clientManageProcessor;
+    }
+
     public SendMessageProcessor getSendMessageProcessor() {
         return sendMessageProcessor;
     }
