@@ -47,6 +47,8 @@ public class PullMessageRequestHeader implements CommandCustomHeader {
     @CFNotNull
     private Long subVersion;
     private String expressionType;
+    @CFNullable
+    private String brokerName;
 
     @Override
     public void checkFields() throws RemotingCommandException {
@@ -138,5 +140,13 @@ public class PullMessageRequestHeader implements CommandCustomHeader {
 
     public void setExpressionType(String expressionType) {
         this.expressionType = expressionType;
+    }
+
+    public String getBrokerName() {
+        return brokerName;
+    }
+
+    public void setBrokerName(String brokerName) {
+        this.brokerName = brokerName;
     }
 }

@@ -31,6 +31,8 @@ public class SearchOffsetRequestHeader implements CommandCustomHeader {
     private Integer queueId;
     @CFNotNull
     private Long timestamp;
+    @CFNotNull
+    private String brokerName;
 
     @Override
     public void checkFields() throws RemotingCommandException {
@@ -61,4 +63,11 @@ public class SearchOffsetRequestHeader implements CommandCustomHeader {
         this.timestamp = timestamp;
     }
 
+    public String getBrokerName() {
+        return brokerName;
+    }
+
+    public void setBrokerName(String brokerName) {
+        this.brokerName = brokerName;
+    }
 }

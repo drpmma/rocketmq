@@ -22,6 +22,7 @@ package org.apache.rocketmq.common.protocol.header;
 
 import org.apache.rocketmq.remoting.CommandCustomHeader;
 import org.apache.rocketmq.remoting.annotation.CFNotNull;
+import org.apache.rocketmq.remoting.annotation.CFNullable;
 import org.apache.rocketmq.remoting.exception.RemotingCommandException;
 
 public class UpdateConsumerOffsetRequestHeader implements CommandCustomHeader {
@@ -33,6 +34,8 @@ public class UpdateConsumerOffsetRequestHeader implements CommandCustomHeader {
     private Integer queueId;
     @CFNotNull
     private Long commitOffset;
+    @CFNullable
+    private String brokerName;
 
     @Override
     public void checkFields() throws RemotingCommandException {
@@ -68,5 +71,13 @@ public class UpdateConsumerOffsetRequestHeader implements CommandCustomHeader {
 
     public void setCommitOffset(Long commitOffset) {
         this.commitOffset = commitOffset;
+    }
+
+    public String getBrokerName() {
+        return brokerName;
+    }
+
+    public void setBrokerName(String brokerName) {
+        this.brokerName = brokerName;
     }
 }
